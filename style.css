@@ -25,6 +25,7 @@ body {
   max-width: 100rem;
   box-shadow: 0 1rem 1.2rem rgba(0, 0, 0, 0.08);
   overflow: visible;
+  position: relative;
 }
 
 .card_img {
@@ -65,7 +66,6 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
-  position: relative;
 }
 
 .user_info {
@@ -109,8 +109,8 @@ body {
 .share_popup {
   position: absolute;
   background-color: #48556a;
-  bottom: 6rem;
-  right: -10rem;
+  bottom: 11rem;
+  right: -6rem;
   padding: 1.5rem 3rem;
   border-radius: 1rem;
   color: white;
@@ -146,10 +146,91 @@ body {
   border-left: 0.8rem solid transparent;
   border-right: 0.8rem solid transparent;
   border-top: 1rem solid hsl(217, 19%, 35%);
-  bottom: -1rem;
+  bottom: -0.9rem;
   right: 11rem;
 }
 
 .show {
   display: flex !important;
+}
+
+@media (max-width: 76.7rem) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    height: 90%;
+  }
+
+  .card_img {
+    flex: none;
+    width: 100%;
+    height: 20rem;
+  }
+
+  .card_img img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .card_content {
+    padding: 2rem;
+  }
+
+  .share_popup {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 1rem 1rem;
+    background-color: #48556a;
+    justify-content: flex-start;
+    padding: 1.5rem 2rem;
+    display: none;
+  }
+
+  .share_popup.show {
+    display: flex !important;
+  }
+
+  .share_popup::after {
+    display: none;
+  }
+
+  .share_popup span {
+    margin-right: 1.5rem;
+  }
+
+  .hide {
+    display: none;
+  }
+}
+
+@media (min-width: 76.7rem) {
+  .card {
+    flex-direction: row;
+    max-width: 100rem;
+  }
+
+  .card_img {
+    flex: 0 0 40%;
+    width: 100%;
+    height: auto;
+  }
+
+  .card_img img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .card_content {
+    flex: 1;
+    padding: 4rem;
+  }
+
+  .share_popup {
+  }
+  .share_popup::after {
+    display: block;
+  }
 }
